@@ -19,7 +19,33 @@
         </style>
     @endif
 </head>
-<body>
-<h1>Impressum</h1>
+<body class="bg-gray-100 dark:bg-gray-500 p-3">
+    <h1 class ="text-sm md:text-xl lg:text-4xl text-gray-500 dark:text-amber-500 md:text-amber-300 dark:md:text-red-300">Impressum</h1>
+    <p class="text-lg lg:text-3xl mt-6 mb-6 md:mt-9">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis cum delectus dolores ducimus, eaque
+        esse est ex fugit harum minima non omnis optio perferendis qui quisquam similique soluta voluptates.</p>
+
+    <div class="space-y-3">
+    <p class="bg-pink-400 p-3 rounded-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos eveniet, fugit hic itaque iusto maiores minima
+        nulla odio quasi qui quia, quod ratione repellat sapiente sed, sunt voluptates? Dolorem, tenetur!</p>
+
+    <p class="bg-blue-700 p-3 rounded-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis dolor eius eveniet,
+        excepturi ipsam mollitia perspiciatis quaerat quas quod rem soluta vel, voluptatem voluptatibus. Autem deleniti
+        id reiciendis!</p>
+
+    <p class="bg-emerald-600 p-3 rounded-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eum facilis mollitia. Consectetur, deserunt
+        eius eligendi est ex fuga harum illum labore minima, necessitatibus nihil odit perferendis quas quia quo.</p>
+
+        <div class = "mt-6 flex flex-row ">
+            <div class="bg-amber-400 flex-2 rounded-lg ">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda deserunt, dolores enim est
+                    laudantium libero quam recusandae unde. Earum eum quas quo! Excepturi, explicabo voluptatum!
+                    Assumenda libero maxime nemo.</p>
+            </div>
+
+        <div class="bg-teal-500 flex-1 rounded-lg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut cum cupiditate enim fuga illum
+                in incidunt iste iusto magni modi, non odio quam repellendus sint sit temporibus totam voluptatem.</p>
+        </div>
+    </div>
 </body>
 </html>

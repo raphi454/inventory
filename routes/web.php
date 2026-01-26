@@ -23,3 +23,37 @@ Route::get('/me', function(){
 Route::get('/impressum', function(){
     return view('impressum');
 });
+
+Route::get('/contact', function(){
+
+    $firstname= 'Max';
+    $surname= 'Muster';
+
+    return view('contact', [
+        'fname' => $firstname,
+        'sname' => $surname
+    ]);
+})->name('pages.contact');
+
+
+Route::get('/inventory',function($id){
+
+    //$info = 'Lenovo ThinkCenter';
+//$info = '<script>window.top.location="https://www.hakzell.at";</script>';
+$info = 'Der <strong>PC</strong> funktioniert perfekt.';
+
+
+    return view('inventory', [
+        'id' => $id,
+        'info' => $info
+    ]);
+
+
+
+
+
+});
+
+Route::get('/features', function () {
+    return view('features');
+});
