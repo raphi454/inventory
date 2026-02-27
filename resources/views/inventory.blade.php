@@ -1,4 +1,4 @@
-<?php
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -43,6 +43,8 @@ Achtung: die Variable wird direkt ausgegeben, falls eine Variable vom Benutzer s
                 <li class = "ml-6">school_id</li>
                 <li class = "ml-6">title</li>
                 <li class = "ml-6">comment</li>
+                <li class = "ml-6">category_id</li>
+
             </ul>
         </li>
     </ul>
@@ -53,7 +55,7 @@ Achtung: die Variable wird direkt ausgegeben, falls eine Variable vom Benutzer s
             <ul class="list-disc">
                 <li class = "ml-6">id</li>
                 <li class = "ml-6">title</li>
-                <li class = "ml-6">school-id</li>
+                <li class = "ml-6">school_id</li>
 
             </ul>
         </li>
@@ -78,6 +80,79 @@ Achtung: die Variable wird direkt ausgegeben, falls eine Variable vom Benutzer s
                 <li class = "ml-6">id</li>
                 <li class = "ml-6">title</li>
                 <li class = "ml-6">school_id</li>
+
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="list-disc">
+        <li class = "ml-6">
+            tags
+            <ul class="list-disc">
+                <li class = "ml-6">id</li>
+                <li class = "ml-6">title</li>
+                <li class = "ml-6">school_id</li>
+
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="list-disc">
+        <li class = "ml-6">
+            items_tags
+            <ul class="list-disc">
+                <li class = "ml-6">id</li>
+                <li class = "ml-6">item_id</li>
+                <li class = "ml-6">ts</li>
+                <li class = "ml-6">tag_id</li>
+
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="list-disc">
+        <li class = "ml-6">
+            users
+            <ul class="list-disc">
+                <li class = "ml-6">id</li>
+                <li class = "ml-6">name</li>
+                <li class = "ml-6">email</li>
+                <li class = "ml-6">password</li>
+
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="list-disc">
+        <li class = "ml-6">
+            groups
+            <ul class="list-disc">
+                <li class = "ml-6">id</li>
+                <li class = "ml-6">name</li>
+
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="list-disc">
+        <li class = "ml-6">
+            users_groups
+            <ul class="list-disc">
+                <li class = "ml-6">id</li>
+                <li class = "ml-6">user_id</li>
+                <li class = "ml-6">group_id</li>
+
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="list-disc">
+        <li class = "ml-6">
+          personal_access_tokens
+            <ul class="list-disc">
+                <li class = "ml-6">id</li>
+                <li class = "ml-6">abilities</li>
+                <li class = "ml-6">name</li>
 
             </ul>
         </li>
