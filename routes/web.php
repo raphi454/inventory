@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,41 +13,18 @@ Route::get('/', function(){
     return "Hallo Welt";
 });
 
-Route::get('/about', function(){
-    return "<html><title>About</title><body><h1>About me</h1></body></html>";
-});
+Route::get('/about',   [PageController::class, 'about']);
 
-Route::get('/me', function(){
-    return view('test');
-});
+Route::get('/me',  [PageController::class, 'me']);
 
-Route::get('/impressum', function(){
-    return view('impressum');
-});
+Route::get('/impressum', [PageController::class, 'impressum']);
 
-Route::get('/contact', function(){
-
-    $firstname= 'Max';
-    $surname= 'Muster';
-
-    return view('contact', [
-        'fname' => $firstname,
-        'sname' => $surname
-    ]);
-})->name('pages.contact');
+Route::get('/contact', [PageController::class, 'contact'])
+    ->name('pages.contact');
 
 
-Route::get('/inventory',function($id){
+Route::get('/inventory/{id}', [PageController::class, 'inventory']);
 
-    //$info = 'Lenovo ThinkCenter';
-//$info = '<script>window.top.location="https://www.hakzell.at";</script>';
-$info = 'Der <strong>PC</strong> funktioniert perfekt.';
-
-
-    return view('inventory', [
-        'id' => $id,
-        'info' => $info
-    ]);
 
 
 
@@ -54,6 +32,6 @@ $info = 'Der <strong>PC</strong> funktioniert perfekt.';
 
 });
 
-Route::get('/features', function () {
-    return view('features');
-});
+Route::get('/features',  [PageController::class, 'features']);
+
+
