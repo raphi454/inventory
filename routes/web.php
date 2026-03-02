@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,13 +26,6 @@ Route::get('/contact', [PageController::class, 'contact'])
 
 Route::get('/inventory/{id}', [PageController::class, 'inventory']);
 
-
-
-
-
-
-});
-
 Route::get('/features',  [PageController::class, 'features']);
 
-
+Route::get('/items', [ItemController::class, 'index']);
