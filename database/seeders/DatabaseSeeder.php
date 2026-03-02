@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\School;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -23,8 +23,12 @@ class DatabaseSeeder extends Seeder
       //  ]);
 
 
-        $school::factory(100)->create();
+        School::factory(100)->create();
 
-        $this->call([SchoolSeeder::class]);
+        $this->call([SchoolSeeder::class, ItemSeeder::class]);
+
+
+
     }
+
 }
