@@ -29,3 +29,5 @@ Route::get('/inventory/{id}', [PageController::class, 'inventory']);
 Route::get('/features',  [PageController::class, 'features']);
 
 Route::get('/items', [ItemController::class, 'index']);
+
+Route::get('student', [\App\Http\Controllers\RandomController::class, 'select']);

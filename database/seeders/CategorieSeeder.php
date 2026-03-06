@@ -14,18 +14,18 @@ class CategorieSeeder extends Seeder
     public function run(): void
     {
         $categories = [[
-
+            'title' => 'C1'
         ],
             [
-
+                'title' => 'C2'
             ],
             [
-
+                'title' => 'C3'
             ]
         ];
         foreach ($categories as $categorie) {
             $c = new Categorie();
-
+            $c->title = $categorie['title'];
 
             $c->save();
         }
