@@ -45,4 +45,8 @@ Route::get('/mydemo',function(){
     return view('demo');
 })->middleware(['auth'])->name('demo');
 
+Route::post('/schule', function () {
+    return back();
+})->name('schule.enter');
+
 require __DIR__.'/auth.php';
