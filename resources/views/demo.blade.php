@@ -30,6 +30,17 @@
                             <x-text-input name="schoolname" id="schoolname" class="block mt-1 w-full" />
                         </div>
 
+                        <div class="mb-4">
+                            <x-input-label for="ort">Ort</x-input-label>
+                            <x-text-input name="ort" id="ort" class="block mt-1 w-full" />
+                        </div>
+
+                        <div class="mb-4">
+                            <x-input-label for="plz">PLZ</x-input-label>
+                            <x-text-input name="plz" id="plz" class="block mt-1 w-full" />
+                        </div>
+
+
                         <x-primary-button class="mt-3">
                             {{ __('Speichern') }}
                         </x-primary-button>
