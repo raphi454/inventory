@@ -4,36 +4,55 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RandomController;
+use App\Http\Controllers\SchoolController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');});
+    return view('welcome');
+});
 
- //   Route::get('/', function () {return "Hallo Welt";});
+//Route::get('/', function(){
+//return "Hallo, Welt!";
+//});
 
-    Route::get('/about', [PageController::class, 'about']);
+//Route::get('/', [PageController::class, 'index']);
 
-    Route::get('/me', [PageController::class, 'me']);
+Route::get('/about', [PageController::class, 'about']);
 
-    Route::get('/impressum', [PageController::class, 'impressum']);
+Route::get('/me', [PageController::class, 'me']);
 
-    Route::get('/contact', [PageController::class, 'contact'])
-        ->name('pages.contact');
+Route::get('/impressum', [PageController::class, 'impressum']);
+
+Route::get('/contact', [PageController::class, 'contact'])
+    ->name('contact');
+
+Route::get('/impressum/{info}', [PageController::class, 'impressum']);
+
+Route::get('/items', [ItemController::class, 'index']);
 
 
-    Route::get('/inventory/{id}', [PageController::class, 'inventory']);
+Route::get('/student', [RandomController::class, 'show'])
+    ->middleware(['auth'])
+    ->name('student');;
 
-    Route::get('/features', [PageController::class, 'features']);
+Route::post('/student', [RandomController::class, 'show'])
+    ->name('student.select')
+    ->middleware(['auth']);
 
-    Route::get('/items', [ItemController::class, 'index']);
-
-    Route::get('/student', [RandomController::class, 'show'])->middleware(['auth'])->name('student');
-
-    Route::post('/student', [RandomController::class, 'show'])->name('students.select')->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('/schools', [SchoolController::class, 'index'])
+    ->middleware(['auth'])
+    ->name('schools.index');
+
+Route::post('/schools',[SchoolController::class, 'store'])
+    ->name('school.store')
+    ->middleware(['auth']);;
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,12 +60,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/mydemo',function(){
-    return view('demo');
-})->middleware(['auth'])->name('demo');
-
-Route::post('/schule', function () {
-    return back();
-})->middleware(['auth'])->name('schule.enter');
-
 require __DIR__.'/auth.php';
+

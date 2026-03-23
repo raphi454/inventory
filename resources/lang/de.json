@@ -3,5 +3,11 @@
     "Selected student": "Schüler:in ausgewählt",
     "Selected: :student": "Gewählt: :student",
     ":firstname reached :points points": ":firstname erreichte :points Punkte",
-    "Please select a student": "Bitte wählen Sie einen Schüler aus."
+    "Please select a student": "Bitte wählen Sie einen Schüler aus",
+    "Schools": "Schulen",
+    "Save": "Speichern",
+    "Select school": "Schule eingeben",
+    "Please enter the school details": "Bitte geben Sie die Daten der Schule ein"
+
 }
+
