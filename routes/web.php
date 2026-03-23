@@ -53,6 +53,14 @@ Route::post('/schools',[SchoolController::class, 'store'])
     ->name('school.store')
     ->middleware(['auth']);;
 
+Route::get('/rooms', [\App\Http\Controllers\RoomController::class, 'index'])
+    ->middleware(['auth'])
+    ->name('rooms.index');
+
+Route::post('/rooms',[\App\Http\Controllers\RoomController::class, 'store'])
+    ->name('room.store')
+    ->middleware(['auth']);;
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
