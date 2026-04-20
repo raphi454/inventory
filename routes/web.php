@@ -69,4 +69,6 @@ Route::delete('/rooms/{room}', [\App\Http\Controllers\RoomController::class, 'de
 Route::get('/rooms/{room}/edit', [\App\Http\Controllers\RoomController::class, 'edit'])
     ->name('rooms.edit')->middleware(['auth']);
 
+Route::patch('/rooms/{room}', [\App\Http\Controllers\RoomController::class, 'update'])
+    ->name('rooms.update')->middleware(['auth']);
 require __DIR__.'/auth.php';

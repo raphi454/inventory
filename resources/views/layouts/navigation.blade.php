@@ -21,7 +21,7 @@
                     <x-nav-link :href="route('student')" :active="request()->routeIs('student')">
                         {{ __('Student') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('rooms.index')" :active="request()->routeIs('rooms.index')">
+                    <x-nav-link :href="route('rooms.index')" :active="request()->routeIs(['rooms.index', 'rooms.edit'])">
                         {{ __('Rooms') }}
                     </x-nav-link>
                 </div>
@@ -85,7 +85,7 @@
             <x-responsive-nav-link :href="route('student')" :active="request()->routeIs('student')">
                 {{ __('Student') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('rooms.index')" :active="request()->routeIs('rooms.index')">
+            <x-responsive-nav-link :href="route('rooms.index')" :active="request()->routeIs(['rooms.index', 'rooms.edit'])">
                 {{ __('Rooms') }}
             </x-responsive-nav-link>
         </div>

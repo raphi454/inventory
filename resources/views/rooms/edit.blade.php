@@ -34,12 +34,13 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
-                    <form action="{{ route('room.store') }}" method="post" class="space-y-6">
+                    <form action="{{ route('rooms.update', $room) }}" method="post" class="space-y-6">
                         @csrf
+                        @method('PATCH')
 
                         <div class="mb-4">
                             <x-input-label for="title">Raumtitel</x-input-label>
-                            <x-text-input value="{{ old('title','') }}" name="title" id="title" class="block mt-1 w-full" />
+                            <x-text-input value="{{ old('title',$room->title) }}" name="title" id="title" class="block mt-1 w-full" />
                         </div>
                         <!--
                         <div class="mb-4">
@@ -52,7 +53,7 @@
                             <x-input-label for="school_id">{{__('School')}}</x-input-label>
                             <select id="school_id" name="school_id" class="rounded">
                                 @foreach($schools as $school)
-                                    <option value="{{$school->id}}" @selected(old("school_id", '101') == $school->id)>
+                                    <option value="{{$school->id}}" @selected(old("school_id", $room->school_id) == $school->id)>
                                         {{$school->name}}</option>
                                 @endforeach
                             </select>

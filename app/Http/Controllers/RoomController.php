@@ -47,6 +47,23 @@ class RoomController extends Controller
     }
 
     public function edit(Room $room){
-        return view('rooms.edit');
+        $schools = School::all();
+
+        return view('rooms.edit', [
+            'room'=>$room,
+            'schools'=>$schools,
+        ]);
     }
+
+    public function update(Room $room){
+        $attributes = request()->validate([
+            "title"=>"required|min:3|max:64|string",
+            "school_id"=>"required|integer",
+        ]);
+
+        $room->update($attributes);
+
+        return back()->with('success', __('Room saved!'));
+    }
+
 }

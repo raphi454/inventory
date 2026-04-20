@@ -9,6 +9,12 @@ class SchoolController extends Controller
 {
     public function index(){
        // $schools = School::all();
+
+        $user = auth()->user();
+        // dd($user);
+
+        $schools = $user->schools();
+        dd($schools);
         $schools =School::paginate(10);
         return view('school.index', [
             'schools' => $schools
