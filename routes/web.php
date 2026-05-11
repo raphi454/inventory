@@ -54,8 +54,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/schools', [SchoolController::class, 'index']
 )->middleware(['auth'])->name('schools.index');
 
-Route::post('/schools', [SchoolController::class, 'store']
-)->name('schule.store')->middleware(['auth']);
+Route::post('/schools', [SchoolController::class, 'store'])
+    ->name('schools.store')
+    ->middleware(['auth']);
 
 Route::get('/rooms', [\App\Http\Controllers\RoomController::class, 'index']
 )->middleware(['auth'])->name('rooms.index');

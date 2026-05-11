@@ -12,7 +12,7 @@ class RoomController extends Controller
         // $rooms = Room::all();
 
         $rooms = Room::paginate(10);
-        $schools = School::all();
+        $schools = auth()->user()->schools;
 
         return view('rooms.index',[
             'rooms'=>$rooms
@@ -56,14 +56,14 @@ class RoomController extends Controller
     }
 
     public function update(Room $room){
-        $attributes = request()->validate([
+        $attributes = \request()->validate([
             "title"=>"required|min:3|max:64|string",
             "school_id"=>"required|integer",
         ]);
 
         $room->update($attributes);
 
-        return back()->with('success', __('Room saved!'));
+        return back()->with('success',__('Room updated successfully'));
     }
-
 }
+
